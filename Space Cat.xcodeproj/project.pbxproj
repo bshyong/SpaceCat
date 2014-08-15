@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281ED574199EC6C1000A6EF0 /* STTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 281ED573199EC6C1000A6EF0 /* STTitleScene.m */; };
 		285AAD0F1968EB41004FFE85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD0E1968EB41004FFE85 /* Foundation.framework */; };
 		285AAD111968EB41004FFE85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD101968EB41004FFE85 /* CoreGraphics.framework */; };
 		285AAD131968EB41004FFE85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD121968EB41004FFE85 /* UIKit.framework */; };
@@ -16,8 +17,6 @@
 		285AAD211968EB41004FFE85 /* STAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 285AAD201968EB41004FFE85 /* STAppDelegate.m */; };
 		285AAD241968EB41004FFE85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285AAD221968EB41004FFE85 /* Main.storyboard */; };
 		285AAD271968EB41004FFE85 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 285AAD261968EB41004FFE85 /* STViewController.m */; };
-		285AAD2A1968EB41004FFE85 /* STMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 285AAD291968EB41004FFE85 /* STMyScene.m */; };
-		285AAD2C1968EB41004FFE85 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 285AAD2B1968EB41004FFE85 /* Spaceship.png */; };
 		285AAD2E1968EB41004FFE85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285AAD2D1968EB41004FFE85 /* Images.xcassets */; };
 		285AAD351968EB41004FFE85 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD341968EB41004FFE85 /* XCTest.framework */; };
 		285AAD361968EB41004FFE85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD0E1968EB41004FFE85 /* Foundation.framework */; };
@@ -37,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		281ED572199EC6C1000A6EF0 /* STTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTitleScene.h; sourceTree = "<group>"; };
+		281ED573199EC6C1000A6EF0 /* STTitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTitleScene.m; sourceTree = "<group>"; };
 		285AAD0B1968EB41004FFE85 /* Space Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		285AAD0E1968EB41004FFE85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		285AAD101968EB41004FFE85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,9 +52,6 @@
 		285AAD231968EB41004FFE85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		285AAD251968EB41004FFE85 /* STViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
 		285AAD261968EB41004FFE85 /* STViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
-		285AAD281968EB41004FFE85 /* STMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMyScene.h; sourceTree = "<group>"; };
-		285AAD291968EB41004FFE85 /* STMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMyScene.m; sourceTree = "<group>"; };
-		285AAD2B1968EB41004FFE85 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		285AAD2D1968EB41004FFE85 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		285AAD331968EB41004FFE85 /* Space CatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space CatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		285AAD341968EB41004FFE85 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -126,9 +124,8 @@
 				285AAD221968EB41004FFE85 /* Main.storyboard */,
 				285AAD251968EB41004FFE85 /* STViewController.h */,
 				285AAD261968EB41004FFE85 /* STViewController.m */,
-				285AAD281968EB41004FFE85 /* STMyScene.h */,
-				285AAD291968EB41004FFE85 /* STMyScene.m */,
-				285AAD2B1968EB41004FFE85 /* Spaceship.png */,
+				281ED572199EC6C1000A6EF0 /* STTitleScene.h */,
+				281ED573199EC6C1000A6EF0 /* STTitleScene.m */,
 				285AAD2D1968EB41004FFE85 /* Images.xcassets */,
 				285AAD171968EB41004FFE85 /* Supporting Files */,
 			);
@@ -243,7 +240,6 @@
 			files = (
 				285AAD1B1968EB41004FFE85 /* InfoPlist.strings in Resources */,
 				285AAD2E1968EB41004FFE85 /* Images.xcassets in Resources */,
-				285AAD2C1968EB41004FFE85 /* Spaceship.png in Resources */,
 				285AAD241968EB41004FFE85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,9 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				285AAD271968EB41004FFE85 /* STViewController.m in Sources */,
-				285AAD2A1968EB41004FFE85 /* STMyScene.m in Sources */,
 				285AAD1D1968EB41004FFE85 /* main.m in Sources */,
 				285AAD211968EB41004FFE85 /* STAppDelegate.m in Sources */,
+				281ED574199EC6C1000A6EF0 /* STTitleScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

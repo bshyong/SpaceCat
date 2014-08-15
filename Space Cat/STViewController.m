@@ -7,7 +7,7 @@
 //
 
 #import "STViewController.h"
-#import "STMyScene.h"
+#import "STTitleScene.h"
 
 @implementation STViewController
 
@@ -21,7 +21,7 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [STMyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [STTitleScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
