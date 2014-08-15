@@ -7,6 +7,7 @@
 //
 
 #import "STTitleScene.h"
+#import "STGameplayScene.h"
 
 @implementation STTitleScene
 
@@ -19,6 +20,15 @@
     [self addChild:background];
   }
   return self;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+  STGameplayScene *gamePlayScene = [STGameplayScene sceneWithSize:self.frame.size];
+  // create transition to gameplay scene
+  SKTransition *transition = [SKTransition fadeWithDuration:1.0];
+  // present the new scene with the specified transition
+  [self.view presentScene:gamePlayScene transition:transition];
+  
 }
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		281ED574199EC6C1000A6EF0 /* STTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 281ED573199EC6C1000A6EF0 /* STTitleScene.m */; };
+		281ED577199EC895000A6EF0 /* STGameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 281ED576199EC895000A6EF0 /* STGameplayScene.m */; };
 		285AAD0F1968EB41004FFE85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD0E1968EB41004FFE85 /* Foundation.framework */; };
 		285AAD111968EB41004FFE85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD101968EB41004FFE85 /* CoreGraphics.framework */; };
 		285AAD131968EB41004FFE85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD121968EB41004FFE85 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		281ED572199EC6C1000A6EF0 /* STTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTitleScene.h; sourceTree = "<group>"; };
 		281ED573199EC6C1000A6EF0 /* STTitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTitleScene.m; sourceTree = "<group>"; };
+		281ED575199EC895000A6EF0 /* STGameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGameplayScene.h; sourceTree = "<group>"; };
+		281ED576199EC895000A6EF0 /* STGameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGameplayScene.m; sourceTree = "<group>"; };
 		285AAD0B1968EB41004FFE85 /* Space Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		285AAD0E1968EB41004FFE85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		285AAD101968EB41004FFE85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				285AAD261968EB41004FFE85 /* STViewController.m */,
 				281ED572199EC6C1000A6EF0 /* STTitleScene.h */,
 				281ED573199EC6C1000A6EF0 /* STTitleScene.m */,
+				281ED575199EC895000A6EF0 /* STGameplayScene.h */,
+				281ED576199EC895000A6EF0 /* STGameplayScene.m */,
 				285AAD2D1968EB41004FFE85 /* Images.xcassets */,
 				285AAD171968EB41004FFE85 /* Supporting Files */,
 			);
@@ -263,6 +268,7 @@
 				285AAD1D1968EB41004FFE85 /* main.m in Sources */,
 				285AAD211968EB41004FFE85 /* STAppDelegate.m in Sources */,
 				281ED574199EC6C1000A6EF0 /* STTitleScene.m in Sources */,
+				281ED577199EC895000A6EF0 /* STGameplayScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
