@@ -28,7 +28,6 @@
   SKTransition *transition = [SKTransition fadeWithDuration:1.0];
   // present the new scene with the specified transition
   [self.view presentScene:gamePlayScene transition:transition];
-  
 }
 
 @end
