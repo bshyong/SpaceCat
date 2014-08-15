@@ -17,6 +17,11 @@
     background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
     // add background as a child node
     [self addChild:background];
+    
+    SKSpriteNode *machine = [SKSpriteNode spriteNodeWithImageNamed:@"machine_1"];
+    machine.position = CGPointMake(CGRectGetMidX(self.frame), 12);
+    machine.anchorPoint = CGPointMake(0.5, 0);
+    [self addChild:machine];
   }
   return self;
 }
