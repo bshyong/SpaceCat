@@ -45,7 +45,7 @@
   float distanceB = pointOffScreen.x - self.position.x;
   float distanceC = sqrtf(powf(distanceA, 2) + powf(distanceB, 2));
   
-  float time = distanceC / 100;
+  float time = distanceC / 400;
   
   SKAction *moveProjectile = [SKAction moveTo:pointOffScreen duration:time];
   [self runAction:moveProjectile];
