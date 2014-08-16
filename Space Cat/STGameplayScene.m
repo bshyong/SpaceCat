@@ -10,6 +10,7 @@
 #import "STMachineNode.h"
 #import "STSpaceCatNode.h"
 #import "STProjectileNode.h"
+#import "STSpaceDogNode.h"
 
 @implementation STGameplayScene
 
@@ -27,6 +28,8 @@
     STSpaceCatNode *spaceCat = [STSpaceCatNode spaceCatAtPosition:CGPointMake(machine.position.x, machine.position.y-2)];
     [self addChild:spaceCat];
     
+    
+    [self addSpaceDog];
   }
   return self;
 }
@@ -51,8 +54,15 @@
   [projectile moveTowardsPosition:position];
 }
 
--(void)update:(NSTimeInterval)currentTime{
+-(void)addSpaceDog{
+  STSpaceDogNode *spaceDogA = [STSpaceDogNode spaceDogOfType:STSpaceDogTypeA];
+  spaceDogA.position = CGPointMake(300, 300);
+  [self addChild:spaceDogA];
   
+  STSpaceDogNode *spaceDogB = [STSpaceDogNode spaceDogOfType:STSpaceDogTypeB];
+  spaceDogB.position = CGPointMake(200, 200);
+  [self addChild:spaceDogB];
 }
+
 
 @end

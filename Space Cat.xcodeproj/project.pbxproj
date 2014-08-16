@@ -28,6 +28,8 @@
 		285AAD371968EB41004FFE85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD121968EB41004FFE85 /* UIKit.framework */; };
 		285AAD3F1968EB41004FFE85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 285AAD3D1968EB41004FFE85 /* InfoPlist.strings */; };
 		285AAD411968EB41004FFE85 /* Space_CatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 285AAD401968EB41004FFE85 /* Space_CatTests.m */; };
+		285AF0D7199EE607006B01CE /* STUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 285AF0D6199EE607006B01CE /* STUtility.m */; };
+		285AF0DA199F5293006B01CE /* STSpaceDogNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 285AF0D9199F5293006B01CE /* STSpaceDogNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,10 @@
 		285AAD3C1968EB41004FFE85 /* Space CatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space CatTests-Info.plist"; sourceTree = "<group>"; };
 		285AAD3E1968EB41004FFE85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		285AAD401968EB41004FFE85 /* Space_CatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Space_CatTests.m; sourceTree = "<group>"; };
+		285AF0D5199EE607006B01CE /* STUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STUtility.h; sourceTree = "<group>"; };
+		285AF0D6199EE607006B01CE /* STUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STUtility.m; sourceTree = "<group>"; };
+		285AF0D8199F5293006B01CE /* STSpaceDogNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSpaceDogNode.h; sourceTree = "<group>"; };
+		285AF0D9199F5293006B01CE /* STSpaceDogNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSpaceDogNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,10 @@
 				281ED57E199ED8B0000A6EF0 /* STSpaceCatNode.m */,
 				281ED580199EDBB2000A6EF0 /* STProjectileNode.h */,
 				281ED581199EDBB2000A6EF0 /* STProjectileNode.m */,
+				285AF0D5199EE607006B01CE /* STUtility.h */,
+				285AF0D8199F5293006B01CE /* STSpaceDogNode.h */,
+				285AF0D9199F5293006B01CE /* STSpaceDogNode.m */,
+				285AF0D6199EE607006B01CE /* STUtility.m */,
 				285AAD2D1968EB41004FFE85 /* Images.xcassets */,
 				285AAD171968EB41004FFE85 /* Supporting Files */,
 			);
@@ -286,8 +296,10 @@
 				285AAD271968EB41004FFE85 /* STViewController.m in Sources */,
 				285AAD1D1968EB41004FFE85 /* main.m in Sources */,
 				281ED57F199ED8B0000A6EF0 /* STSpaceCatNode.m in Sources */,
+				285AF0D7199EE607006B01CE /* STUtility.m in Sources */,
 				281ED582199EDBB2000A6EF0 /* STProjectileNode.m in Sources */,
 				285AAD211968EB41004FFE85 /* STAppDelegate.m in Sources */,
+				285AF0DA199F5293006B01CE /* STSpaceDogNode.m in Sources */,
 				281ED574199EC6C1000A6EF0 /* STTitleScene.m in Sources */,
 				281ED57C199ED6DC000A6EF0 /* STMachineNode.m in Sources */,
 				281ED577199EC895000A6EF0 /* STGameplayScene.m in Sources */,
