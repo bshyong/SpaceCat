@@ -7,6 +7,7 @@
 //
 
 #import "STGameplayScene.h"
+#import "STMachineNode.h"
 
 @implementation STGameplayScene
 
@@ -18,12 +19,14 @@
     // add background as a child node
     [self addChild:background];
     
-    SKSpriteNode *machine = [SKSpriteNode spriteNodeWithImageNamed:@"machine_1"];
-    machine.position = CGPointMake(CGRectGetMidX(self.frame), 12);
-    machine.anchorPoint = CGPointMake(0.5, 0);
+    STMachineNode *machine = [STMachineNode machineAtPosition:CGPointMake(CGRectGetMidX(self.frame), 12)];
     [self addChild:machine];
   }
   return self;
+}
+
+-(void)update:(NSTimeInterval)currentTime{
+  
 }
 
 @end
