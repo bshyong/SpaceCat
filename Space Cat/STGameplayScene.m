@@ -9,6 +9,7 @@
 #import "STGameplayScene.h"
 #import "STMachineNode.h"
 #import "STSpaceCatNode.h"
+#import "STProjectileNode.h"
 
 @implementation STGameplayScene
 
@@ -31,8 +32,23 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+  
+  for (UITouch *touch in touches) {
+    CGPoint position = [touch locationInNode:self];
+    [self shootProjectileTowardsPosition:position];
+  }
+
+}
+
+-(void)shootProjectileTowardsPosition:(CGPoint)position{
   STSpaceCatNode *spaceCat = (STSpaceCatNode *)[self childNodeWithName:@"SpaceCat"];
   [spaceCat performTap];
+  
+  STMachineNode *machine = (STMachineNode *)[self childNodeWithName:@"Machine"];
+  
+  STProjectileNode *projectile = [STProjectileNode projectileAtPosition:CGPointMake(machine.position.x, machine.position.y+machine.frame.size.height-15)];
+  [self addChild:projectile];
+  [projectile moveTowardsPosition:position];
 }
 
 -(void)update:(NSTimeInterval)currentTime{
