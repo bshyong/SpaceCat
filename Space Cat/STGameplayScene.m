@@ -12,6 +12,7 @@
 #import "STProjectileNode.h"
 #import "STSpaceDogNode.h"
 #import "STGroundNode.h"
+#import "STUtility.h"
 
 @implementation STGameplayScene
 
@@ -32,6 +33,7 @@
     [self addSpaceDog];
     
     self.physicsWorld.gravity = CGVectorMake(0, -9.8);
+    self.physicsWorld.contactDelegate = self;
     
     STGroundNode *ground = [STGroundNode groundWithSize:CGSizeMake(self.frame.size.width, 22)];
     [self addChild:ground];
@@ -68,6 +70,26 @@
   STSpaceDogNode *spaceDogB = [STSpaceDogNode spaceDogOfType:STSpaceDogTypeB];
   spaceDogB.position = CGPointMake(200, 200);
   [self addChild:spaceDogB];
+}
+
+- (void) didBeginContact:(SKPhysicsContact *)contact{
+  SKPhysicsBody *first, *second;
+  if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask) {
+    first = contact.bodyA;
+    second = contact.bodyB;
+  } else {
+    first = contact.bodyB;
+    second = contact.bodyA;
+  }
+  STSpaceDogNode *spaceDog = (STSpaceDogNode *)first.node;
+
+  if (first.categoryBitMask == STCollisionCategoryEnemy && second.categoryBitMask == STCollisionCategoryProjectile){
+    STProjectileNode *projectile = (STProjectileNode *)second.node;
+    [spaceDog removeFromParent];
+    [projectile removeFromParent];
+  } else if (first.categoryBitMask == STCollisionCategoryEnemy && second.categoryBitMask == STCollisionCategoryGround){
+    [spaceDog removeFromParent];
+  }
 }
 
 
