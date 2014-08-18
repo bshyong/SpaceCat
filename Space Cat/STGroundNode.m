@@ -7,6 +7,7 @@
 //
 
 #import "STGroundNode.h"
+#import "STUtility.h"
 
 @implementation STGroundNode
 + (instancetype) groundWithSize:(CGSize)size{
@@ -22,6 +23,9 @@
   self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
   self.physicsBody.affectedByGravity = NO;
   self.physicsBody.dynamic = NO;
+  self.physicsBody.categoryBitMask = STCollisionCategoryGround;
+  self.physicsBody.collisionBitMask = STCollisionCategoryDebris;
+  self.physicsBody.contactTestBitMask = STCollisionCategoryEnemy;
 }
 
 @end

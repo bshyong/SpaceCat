@@ -7,6 +7,7 @@
 //
 
 #import "STSpaceDogNode.h"
+#import "STUtility.h"
 
 @implementation STSpaceDogNode
 + (instancetype) spaceDogOfType:(STSpaceDogType)type{
@@ -38,6 +39,9 @@
   self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
   self.physicsBody.affectedByGravity = NO;
   self.physicsBody.velocity = CGVectorMake(0, -15);
+  self.physicsBody.categoryBitMask = STCollisionCategoryEnemy;
+  self.physicsBody.collisionBitMask = 0;
+  self.physicsBody.contactTestBitMask = STCollisionCategoryProjectile | STCollisionCategoryGround;
 }
 
 
