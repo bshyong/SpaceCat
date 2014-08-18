@@ -12,10 +12,16 @@
 + (instancetype) groundWithSize:(CGSize)size{
   STGroundNode *ground = [self spriteNodeWithColor:[SKColor greenColor] size:size];
   ground.name = @"Ground";
-  ground.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:size];
   ground.position = CGPointMake(size.width/2, size.height/2);
-  ground.physicsBody.affectedByGravity = NO;
+  [ground setupPhysicsBody];
 
   return ground;
 }
+
+-(void)setupPhysicsBody{
+  self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
+  self.physicsBody.affectedByGravity = NO;
+  self.physicsBody.dynamic = NO;
+}
+
 @end

@@ -29,6 +29,16 @@
   SKAction *animation = [SKAction animateWithTextures:textures timePerFrame:0.1];
   [spaceDog runAction:[SKAction repeatActionForever:animation]];
   
+  [spaceDog setupPhysicsBody];
+  
   return spaceDog;
 }
+
+-(void)setupPhysicsBody{
+  self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
+  self.physicsBody.affectedByGravity = NO;
+  self.physicsBody.velocity = CGVectorMake(0, -15);
+}
+
+
 @end

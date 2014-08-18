@@ -15,6 +15,7 @@
   projectile.position = position;
   projectile.name = @"Projectile";
   [projectile setupAnimation];
+  [projectile setupPhysicsBody];
   
   return projectile;
 }
@@ -26,6 +27,11 @@
   SKAction *animation = [SKAction animateWithTextures:textures timePerFrame:0.1];
   SKAction *repeatAction = [SKAction repeatActionForever:animation];
   [self runAction:repeatAction];
+}
+
+-(void)setupPhysicsBody {
+  self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
+  self.physicsBody.affectedByGravity = NO;
 }
 
 -(void)moveTowardsPosition:(CGPoint)position{
