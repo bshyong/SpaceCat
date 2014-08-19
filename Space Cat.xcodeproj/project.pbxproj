@@ -39,6 +39,8 @@
 		2862131C19A30A3B005522E0 /* Gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2862131919A30A3B005522E0 /* Gameplay.mp3 */; };
 		2862131D19A30A3B005522E0 /* StartScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2862131A19A30A3B005522E0 /* StartScreen.mp3 */; };
 		2862131F19A30A4C005522E0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2862131E19A30A4C005522E0 /* AVFoundation.framework */; };
+		2862132619A31F03005522E0 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2862132419A31F03005522E0 /* Explosion.sks */; };
+		2862132719A31F03005522E0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2862132519A31F03005522E0 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		2862131919A30A3B005522E0 /* Gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gameplay.mp3; sourceTree = "<group>"; };
 		2862131A19A30A3B005522E0 /* StartScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StartScreen.mp3; sourceTree = "<group>"; };
 		2862131E19A30A4C005522E0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2862132419A31F03005522E0 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
+		2862132519A31F03005522E0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 		285AAD021968EB40004FFE85 = {
 			isa = PBXGroup;
 			children = (
+				2862132419A31F03005522E0 /* Explosion.sks */,
+				2862132519A31F03005522E0 /* spark.png */,
 				285AAD161968EB41004FFE85 /* Space Cat */,
 				285AAD3A1968EB41004FFE85 /* Space CatTests */,
 				285AAD0D1968EB41004FFE85 /* Frameworks */,
@@ -314,6 +320,8 @@
 				2862131719A30850005522E0 /* PressStart.caf in Resources */,
 				2862131619A30850005522E0 /* Laser.caf in Resources */,
 				285AAD2E1968EB41004FFE85 /* Images.xcassets in Resources */,
+				2862132719A31F03005522E0 /* spark.png in Resources */,
+				2862132619A31F03005522E0 /* Explosion.sks in Resources */,
 				2862131B19A30A3B005522E0 /* GameOver.mp3 in Resources */,
 				2862131419A30850005522E0 /* Damage.caf in Resources */,
 				281ED579199EC9D1000A6EF0 /* Sprites.atlas in Resources */,
