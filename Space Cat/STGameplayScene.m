@@ -17,6 +17,9 @@
 @interface STGameplayScene ()
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @property (nonatomic) NSTimeInterval timeSinceEnemyAdded;
+@property (nonatomic) NSTimeInterval totalGameTime;
+@property (nonatomic) NSInteger minSpeed;
+@property (nonatomic) NSTimeInterval addEnemyTimeInterval;
 @end
 
 @implementation STGameplayScene
@@ -26,6 +29,9 @@
     
     self.lastUpdateTimeInterval = 0;
     self.timeSinceEnemyAdded = 0;
+    self.addEnemyTimeInterval = 1.5;
+    self.minSpeed = STSpaceDogMinSpeed;
+    self.totalGameTime = 0;
     
     SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background_1"];
     // center background at middle of frame
@@ -131,6 +137,7 @@
 - (void)update:(NSTimeInterval)currentTime{
   if (self.lastUpdateTimeInterval){
     self.timeSinceEnemyAdded += currentTime - self.lastUpdateTimeInterval;
+    self.totalGameTime =+ currentTime - self.lastUpdateTimeInterval;
   }
   if (self.timeSinceEnemyAdded > 1.5){
     [self addSpaceDog];
@@ -138,6 +145,20 @@
   }
   
   self.lastUpdateTimeInterval = currentTime;
+  
+  if (self.totalGameTime > 480){
+    self.addEnemyTimeInterval = 0.50;
+    self.minSpeed = -160;
+  } else if (self.totalGameTime > 240){
+    self.addEnemyTimeInterval = 0.65;
+    self.minSpeed = -150;
+  } else if (self.totalGameTime > 120){
+    self.addEnemyTimeInterval = 0.75;
+    self.minSpeed = -125;
+  } else if (self.totalGameTime > 30){
+    self.addEnemyTimeInterval = 1.00;
+    self.minSpeed = -100;
+  }
 
 }
 
