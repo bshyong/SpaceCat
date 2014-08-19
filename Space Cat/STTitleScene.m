@@ -9,6 +9,11 @@
 #import "STTitleScene.h"
 #import "STGameplayScene.h"
 
+@interface STTitleScene ()
+@property (nonatomic) SKAction *pressStartSFX;
+@end
+
+
 @implementation STTitleScene
 
 -(id)initWithSize:(CGSize)size {
@@ -18,6 +23,9 @@
     background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
     // add background as a child node
     [self addChild:background];
+    
+    self.pressStartSFX = [SKAction playSoundFileNamed:@"PressStart.caf" waitForCompletion:NO];
+    
   }
   return self;
 }

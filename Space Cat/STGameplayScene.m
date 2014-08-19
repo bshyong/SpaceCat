@@ -20,6 +20,9 @@
 @property (nonatomic) NSTimeInterval totalGameTime;
 @property (nonatomic) NSInteger minSpeed;
 @property (nonatomic) NSTimeInterval addEnemyTimeInterval;
+@property (nonatomic) SKAction *damageSFX;
+@property (nonatomic) SKAction *explodeSFX;
+@property (nonatomic) SKAction *laserSFX;
 @end
 
 @implementation STGameplayScene
@@ -51,8 +54,15 @@
     STGroundNode *ground = [STGroundNode groundWithSize:CGSizeMake(self.frame.size.width, 22)];
     [self addChild:ground];
     
+    [self setupSounds];
   }
   return self;
+}
+
+- (void) setupSounds {
+  self.damageSFX = [SKAction playSoundFileNamed:@"Damage.caf" waitForCompletion:NO];
+  self.explodeSFX = [SKAction playSoundFileNamed:@"Explode.caf" waitForCompletion:NO];
+  self.laserSFX = [SKAction playSoundFileNamed:@"Laser.caf" waitForCompletion:NO];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -73,6 +83,8 @@
   STProjectileNode *projectile = [STProjectileNode projectileAtPosition:CGPointMake(machine.position.x, machine.position.y+machine.frame.size.height-15)];
   [self addChild:projectile];
   [projectile moveTowardsPosition:position];
+  
+  [self runAction:self.laserSFX];
 }
 
 -(void)addSpaceDog{
@@ -103,10 +115,11 @@
   
   if (first.categoryBitMask == STCollisionCategoryEnemy && second.categoryBitMask == STCollisionCategoryProjectile){
     STProjectileNode *projectile = (STProjectileNode *)second.node;
-    
+    [self runAction:self.explodeSFX];
     [spaceDog removeFromParent];
     [projectile removeFromParent];
   } else if (first.categoryBitMask == STCollisionCategoryEnemy && second.categoryBitMask == STCollisionCategoryGround){
+    [self runAction:self.damageSFX];
     [spaceDog removeFromParent];
   }
 }

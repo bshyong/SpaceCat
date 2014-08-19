@@ -31,6 +31,10 @@
 		285AF0D7199EE607006B01CE /* STUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 285AF0D6199EE607006B01CE /* STUtility.m */; };
 		285AF0DA199F5293006B01CE /* STSpaceDogNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 285AF0D9199F5293006B01CE /* STSpaceDogNode.m */; };
 		285AF0DD19A1C74D006B01CE /* STGroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 285AF0DC19A1C74D006B01CE /* STGroundNode.m */; };
+		2862131419A30850005522E0 /* Damage.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2862131019A30850005522E0 /* Damage.caf */; };
+		2862131519A30850005522E0 /* Explode.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2862131119A30850005522E0 /* Explode.caf */; };
+		2862131619A30850005522E0 /* Laser.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2862131219A30850005522E0 /* Laser.caf */; };
+		2862131719A30850005522E0 /* PressStart.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2862131319A30850005522E0 /* PressStart.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		285AF0D9199F5293006B01CE /* STSpaceDogNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSpaceDogNode.m; sourceTree = "<group>"; };
 		285AF0DB19A1C74D006B01CE /* STGroundNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGroundNode.h; sourceTree = "<group>"; };
 		285AF0DC19A1C74D006B01CE /* STGroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGroundNode.m; sourceTree = "<group>"; };
+		2862131019A30850005522E0 /* Damage.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Damage.caf; sourceTree = "<group>"; };
+		2862131119A30850005522E0 /* Explode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explode.caf; sourceTree = "<group>"; };
+		2862131219A30850005522E0 /* Laser.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Laser.caf; sourceTree = "<group>"; };
+		2862131319A30850005522E0 /* PressStart.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +150,7 @@
 		285AAD161968EB41004FFE85 /* Space Cat */ = {
 			isa = PBXGroup;
 			children = (
+				2862130F19A30843005522E0 /* Sounds */,
 				281ED578199EC9D1000A6EF0 /* Sprites.atlas */,
 				285AAD1F1968EB41004FFE85 /* STAppDelegate.h */,
 				285AAD201968EB41004FFE85 /* STAppDelegate.m */,
@@ -197,6 +206,17 @@
 				285AAD3D1968EB41004FFE85 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2862130F19A30843005522E0 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2862131019A30850005522E0 /* Damage.caf */,
+				2862131119A30850005522E0 /* Explode.caf */,
+				2862131219A30850005522E0 /* Laser.caf */,
+				2862131319A30850005522E0 /* PressStart.caf */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,8 +297,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				285AAD1B1968EB41004FFE85 /* InfoPlist.strings in Resources */,
+				2862131719A30850005522E0 /* PressStart.caf in Resources */,
+				2862131619A30850005522E0 /* Laser.caf in Resources */,
 				285AAD2E1968EB41004FFE85 /* Images.xcassets in Resources */,
+				2862131419A30850005522E0 /* Damage.caf in Resources */,
 				281ED579199EC9D1000A6EF0 /* Sprites.atlas in Resources */,
+				2862131519A30850005522E0 /* Explode.caf in Resources */,
 				285AAD241968EB41004FFE85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
