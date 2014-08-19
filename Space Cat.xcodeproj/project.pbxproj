@@ -13,6 +13,7 @@
 		281ED57C199ED6DC000A6EF0 /* STMachineNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 281ED57B199ED6DC000A6EF0 /* STMachineNode.m */; };
 		281ED57F199ED8B0000A6EF0 /* STSpaceCatNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 281ED57E199ED8B0000A6EF0 /* STSpaceCatNode.m */; };
 		281ED582199EDBB2000A6EF0 /* STProjectileNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 281ED581199EDBB2000A6EF0 /* STProjectileNode.m */; };
+		2849018419A3450A006499C2 /* STHudNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2849018319A3450A006499C2 /* STHudNode.m */; };
 		285AAD0F1968EB41004FFE85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD0E1968EB41004FFE85 /* Foundation.framework */; };
 		285AAD111968EB41004FFE85 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD101968EB41004FFE85 /* CoreGraphics.framework */; };
 		285AAD131968EB41004FFE85 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285AAD121968EB41004FFE85 /* UIKit.framework */; };
@@ -65,6 +66,8 @@
 		281ED57E199ED8B0000A6EF0 /* STSpaceCatNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSpaceCatNode.m; sourceTree = "<group>"; };
 		281ED580199EDBB2000A6EF0 /* STProjectileNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STProjectileNode.h; sourceTree = "<group>"; };
 		281ED581199EDBB2000A6EF0 /* STProjectileNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STProjectileNode.m; sourceTree = "<group>"; };
+		2849018219A3450A006499C2 /* STHudNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STHudNode.h; sourceTree = "<group>"; };
+		2849018319A3450A006499C2 /* STHudNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STHudNode.m; sourceTree = "<group>"; };
 		285AAD0B1968EB41004FFE85 /* Space Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		285AAD0E1968EB41004FFE85 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		285AAD101968EB41004FFE85 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 				281ED573199EC6C1000A6EF0 /* STTitleScene.m */,
 				281ED575199EC895000A6EF0 /* STGameplayScene.h */,
 				281ED576199EC895000A6EF0 /* STGameplayScene.m */,
+				2849018219A3450A006499C2 /* STHudNode.h */,
+				2849018319A3450A006499C2 /* STHudNode.m */,
 				285AF0DB19A1C74D006B01CE /* STGroundNode.h */,
 				285AF0DC19A1C74D006B01CE /* STGroundNode.m */,
 				281ED57A199ED6DC000A6EF0 /* STMachineNode.h */,
@@ -354,6 +359,7 @@
 				281ED582199EDBB2000A6EF0 /* STProjectileNode.m in Sources */,
 				285AAD211968EB41004FFE85 /* STAppDelegate.m in Sources */,
 				285AF0DA199F5293006B01CE /* STSpaceDogNode.m in Sources */,
+				2849018419A3450A006499C2 /* STHudNode.m in Sources */,
 				281ED574199EC6C1000A6EF0 /* STTitleScene.m in Sources */,
 				281ED57C199ED6DC000A6EF0 /* STMachineNode.m in Sources */,
 				281ED577199EC895000A6EF0 /* STGameplayScene.m in Sources */,

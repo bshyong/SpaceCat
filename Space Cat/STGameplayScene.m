@@ -14,6 +14,7 @@
 #import "STGroundNode.h"
 #import "STUtility.h"
 #import <AVFoundation/AVFoundation.h>
+#import "STHudNode.h"
 
 @interface STGameplayScene ()
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
@@ -57,6 +58,9 @@
     [self addChild:ground];
     
     [self setupSounds];
+    
+    STHudNode *hud = [STHudNode hudAtPosition:CGPointMake(0, self.frame.size.height-20) inFrame:self.frame];
+    [self addChild:hud];
   }
   return self;
 }
