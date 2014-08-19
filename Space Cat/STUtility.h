@@ -18,5 +18,5 @@ typedef NS_OPTIONS(uint32_t, STCollisionCategory){
 };
 
 @interface STUtility : NSObject
-
++ (NSInteger)randWithMin:(NSInteger)min max:(NSInteger)max;
 @end

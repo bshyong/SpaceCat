@@ -83,12 +83,39 @@
   }
   STSpaceDogNode *spaceDog = (STSpaceDogNode *)first.node;
 
+  // create debris at the contact point
+  [self createDebrisAtPosition:contact.contactPoint];
+  
   if (first.categoryBitMask == STCollisionCategoryEnemy && second.categoryBitMask == STCollisionCategoryProjectile){
     STProjectileNode *projectile = (STProjectileNode *)second.node;
+    
     [spaceDog removeFromParent];
     [projectile removeFromParent];
   } else if (first.categoryBitMask == STCollisionCategoryEnemy && second.categoryBitMask == STCollisionCategoryGround){
     [spaceDog removeFromParent];
+  }
+}
+
+- (void)createDebrisAtPosition:(CGPoint)position{
+  NSInteger numberOfPieces = [STUtility randWithMin:5 max:20];
+
+  for(int i = 0; i < numberOfPieces; i++){
+    NSInteger randomPiece = [STUtility randWithMin:1 max:4];
+    NSString *imageName = [NSString stringWithFormat:@"debri_%d", randomPiece];
+    SKSpriteNode *debris = [SKSpriteNode spriteNodeWithImageNamed:imageName];
+    debris.position = position;
+    [self addChild:debris];
+    
+    debris.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:debris.frame.size];
+    debris.physicsBody.categoryBitMask = STCollisionCategoryDebris;
+    debris.physicsBody.contactTestBitMask = 0;
+    debris.physicsBody.collisionBitMask = STCollisionCategoryGround | STCollisionCategoryDebris;
+    debris.name = @"Debris";
+    debris.physicsBody.velocity = CGVectorMake([STUtility randWithMin:-150 max:150], [STUtility randWithMin:150 max:350]);
+    [debris runAction:[SKAction waitForDuration:2.0] completion:^{
+      [debris removeFromParent];
+    }];
+    
   }
 }
 
