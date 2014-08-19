@@ -35,6 +35,10 @@
 		2862131519A30850005522E0 /* Explode.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2862131119A30850005522E0 /* Explode.caf */; };
 		2862131619A30850005522E0 /* Laser.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2862131219A30850005522E0 /* Laser.caf */; };
 		2862131719A30850005522E0 /* PressStart.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2862131319A30850005522E0 /* PressStart.caf */; };
+		2862131B19A30A3B005522E0 /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2862131819A30A3B005522E0 /* GameOver.mp3 */; };
+		2862131C19A30A3B005522E0 /* Gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2862131919A30A3B005522E0 /* Gameplay.mp3 */; };
+		2862131D19A30A3B005522E0 /* StartScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2862131A19A30A3B005522E0 /* StartScreen.mp3 */; };
+		2862131F19A30A4C005522E0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2862131E19A30A4C005522E0 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		2862131119A30850005522E0 /* Explode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explode.caf; sourceTree = "<group>"; };
 		2862131219A30850005522E0 /* Laser.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Laser.caf; sourceTree = "<group>"; };
 		2862131319A30850005522E0 /* PressStart.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart.caf; sourceTree = "<group>"; };
+		2862131819A30A3B005522E0 /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
+		2862131919A30A3B005522E0 /* Gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gameplay.mp3; sourceTree = "<group>"; };
+		2862131A19A30A3B005522E0 /* StartScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StartScreen.mp3; sourceTree = "<group>"; };
+		2862131E19A30A4C005522E0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2862131F19A30A4C005522E0 /* AVFoundation.framework in Frameworks */,
 				285AAD111968EB41004FFE85 /* CoreGraphics.framework in Frameworks */,
 				285AAD131968EB41004FFE85 /* UIKit.framework in Frameworks */,
 				285AAD151968EB41004FFE85 /* SpriteKit.framework in Frameworks */,
@@ -138,6 +147,7 @@
 		285AAD0D1968EB41004FFE85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2862131E19A30A4C005522E0 /* AVFoundation.framework */,
 				285AAD0E1968EB41004FFE85 /* Foundation.framework */,
 				285AAD101968EB41004FFE85 /* CoreGraphics.framework */,
 				285AAD121968EB41004FFE85 /* UIKit.framework */,
@@ -211,6 +221,9 @@
 		2862130F19A30843005522E0 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				2862131819A30A3B005522E0 /* GameOver.mp3 */,
+				2862131919A30A3B005522E0 /* Gameplay.mp3 */,
+				2862131A19A30A3B005522E0 /* StartScreen.mp3 */,
 				2862131019A30850005522E0 /* Damage.caf */,
 				2862131119A30850005522E0 /* Explode.caf */,
 				2862131219A30850005522E0 /* Laser.caf */,
@@ -296,13 +309,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2862131C19A30A3B005522E0 /* Gameplay.mp3 in Resources */,
 				285AAD1B1968EB41004FFE85 /* InfoPlist.strings in Resources */,
 				2862131719A30850005522E0 /* PressStart.caf in Resources */,
 				2862131619A30850005522E0 /* Laser.caf in Resources */,
 				285AAD2E1968EB41004FFE85 /* Images.xcassets in Resources */,
+				2862131B19A30A3B005522E0 /* GameOver.mp3 in Resources */,
 				2862131419A30850005522E0 /* Damage.caf in Resources */,
 				281ED579199EC9D1000A6EF0 /* Sprites.atlas in Resources */,
 				2862131519A30850005522E0 /* Explode.caf in Resources */,
+				2862131D19A30A3B005522E0 /* StartScreen.mp3 in Resources */,
 				285AAD241968EB41004FFE85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,9 +8,11 @@
 
 #import "STTitleScene.h"
 #import "STGameplayScene.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface STTitleScene ()
 @property (nonatomic) SKAction *pressStartSFX;
+@property (nonatomic) AVAudioPlayer *backgroundMusic;
 @end
 
 
@@ -26,11 +28,22 @@
     
     self.pressStartSFX = [SKAction playSoundFileNamed:@"PressStart.caf" waitForCompletion:NO];
     
+    NSURL *musicURL = [[NSBundle mainBundle] URLForResource:@"StartScreen" withExtension:@"mp3"];
+    self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:musicURL error:nil];
+    self.backgroundMusic.numberOfLoops = -1;
+    [self.backgroundMusic prepareToPlay];
   }
   return self;
 }
 
+- (void) didMoveToView:(SKView *)view{
+  [self.backgroundMusic play];
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+  [self runAction:self.pressStartSFX];
+  [self.backgroundMusic stop];
+  
   STGameplayScene *gamePlayScene = [STGameplayScene sceneWithSize:self.frame.size];
   // create transition to gameplay scene
   SKTransition *transition = [SKTransition fadeWithDuration:1.0];
