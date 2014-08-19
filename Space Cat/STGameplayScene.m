@@ -15,6 +15,7 @@
 #import "STUtility.h"
 #import <AVFoundation/AVFoundation.h>
 #import "STHudNode.h"
+#import "STGameOverNode.h"
 
 @interface STGameplayScene ()
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
@@ -26,6 +27,9 @@
 @property (nonatomic) SKAction *explodeSFX;
 @property (nonatomic) SKAction *laserSFX;
 @property (nonatomic) AVAudioPlayer *backgroundMusic;
+@property (nonatomic) BOOL gameOver;
+@property (nonatomic) BOOL restart;
+@property (nonatomic) BOOL gameOverDisplayed;
 @end
 
 @implementation STGameplayScene
@@ -38,6 +42,9 @@
     self.addEnemyTimeInterval = 1.5;
     self.minSpeed = STSpaceDogMinSpeed;
     self.totalGameTime = 0;
+    self.gameOver = NO;
+    self.restart = NO;
+    self.gameOverDisplayed = NO;
     
     SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background_1"];
     // center background at middle of frame
@@ -82,11 +89,19 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-  
-  for (UITouch *touch in touches) {
-    CGPoint position = [touch locationInNode:self];
-    [self shootProjectileTowardsPosition:position];
+  if (!self.gameOver){
+    for (UITouch *touch in touches) {
+      CGPoint position = [touch locationInNode:self];
+      [self shootProjectileTowardsPosition:position];
+    }
+  } else if (self.restart){
+    for (SKNode *node in [self children]) {
+      [node removeFromParent];
+    }
+    STGameplayScene *scene = [STGameplayScene sceneWithSize:self.view.bounds.size];
+    [self.view presentScene:scene];
   }
+
 
 }
 
@@ -182,7 +197,15 @@
 
 - (void)loseLife{
   STHudNode *hud = (STHudNode *)[self childNodeWithName:@"HUD"];
-  [hud loseLife];
+  self.gameOver = [hud loseLife];
+}
+
+- (void)performGameOver {
+  STGameOverNode *gameOver = [STGameOverNode gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+  [self addChild:gameOver];
+  self.restart = YES;
+  self.gameOverDisplayed = YES;
+  [gameOver performAnimation];
 }
 
 - (void)update:(NSTimeInterval)currentTime{
@@ -190,7 +213,7 @@
     self.timeSinceEnemyAdded += currentTime - self.lastUpdateTimeInterval;
     self.totalGameTime =+ currentTime - self.lastUpdateTimeInterval;
   }
-  if (self.timeSinceEnemyAdded > 1.5){
+  if ((self.timeSinceEnemyAdded > 1.5) && !self.gameOver){
     [self addSpaceDog];
     self.timeSinceEnemyAdded = 0;
   }
@@ -209,6 +232,10 @@
   } else if (self.totalGameTime > 30){
     self.addEnemyTimeInterval = 1.00;
     self.minSpeed = -100;
+  }
+  
+  if (self.gameOver && !self.gameOverDisplayed) {
+    [self performGameOver];
   }
 
 }

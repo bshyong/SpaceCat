@@ -42,6 +42,7 @@
 		2862131F19A30A4C005522E0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2862131E19A30A4C005522E0 /* AVFoundation.framework */; };
 		2862132619A31F03005522E0 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2862132419A31F03005522E0 /* Explosion.sks */; };
 		2862132719A31F03005522E0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2862132519A31F03005522E0 /* spark.png */; };
+		28862EC719A3560B00BE98E7 /* STGameOverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 28862EC619A3560B00BE98E7 /* STGameOverNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		2862131E19A30A4C005522E0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2862132419A31F03005522E0 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		2862132519A31F03005522E0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		28862EC519A3560B00BE98E7 /* STGameOverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGameOverNode.h; sourceTree = "<group>"; };
+		28862EC619A3560B00BE98E7 /* STGameOverNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGameOverNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 				281ED573199EC6C1000A6EF0 /* STTitleScene.m */,
 				281ED575199EC895000A6EF0 /* STGameplayScene.h */,
 				281ED576199EC895000A6EF0 /* STGameplayScene.m */,
+				28862EC519A3560B00BE98E7 /* STGameOverNode.h */,
+				28862EC619A3560B00BE98E7 /* STGameOverNode.m */,
 				2849018219A3450A006499C2 /* STHudNode.h */,
 				2849018319A3450A006499C2 /* STHudNode.m */,
 				285AF0DB19A1C74D006B01CE /* STGroundNode.h */,
@@ -355,6 +360,7 @@
 				285AF0DD19A1C74D006B01CE /* STGroundNode.m in Sources */,
 				285AAD1D1968EB41004FFE85 /* main.m in Sources */,
 				281ED57F199ED8B0000A6EF0 /* STSpaceCatNode.m in Sources */,
+				28862EC719A3560B00BE98E7 /* STGameOverNode.m in Sources */,
 				285AF0D7199EE607006B01CE /* STUtility.m in Sources */,
 				281ED582199EDBB2000A6EF0 /* STProjectileNode.m in Sources */,
 				285AAD211968EB41004FFE85 /* STAppDelegate.m in Sources */,
