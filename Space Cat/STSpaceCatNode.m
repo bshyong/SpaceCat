@@ -19,6 +19,7 @@
   spaceCat.position = position;
   spaceCat.anchorPoint = CGPointMake(0.5, 0);
   spaceCat.name = @"SpaceCat";
+  spaceCat.zPosition = 9;
 
   return spaceCat;
 }
