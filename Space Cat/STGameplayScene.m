@@ -14,10 +14,19 @@
 #import "STGroundNode.h"
 #import "STUtility.h"
 
+@interface STGameplayScene ()
+@property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
+@property (nonatomic) NSTimeInterval timeSinceEnemyAdded;
+@end
+
 @implementation STGameplayScene
 
 -(id)initWithSize:(CGSize)size {
   if (self = [super initWithSize:size]) {
+    
+    self.lastUpdateTimeInterval = 0;
+    self.timeSinceEnemyAdded = 0;
+    
     SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background_1"];
     // center background at middle of frame
     background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
@@ -29,8 +38,6 @@
     
     STSpaceCatNode *spaceCat = [STSpaceCatNode spaceCatAtPosition:CGPointMake(machine.position.x, machine.position.y-2)];
     [self addChild:spaceCat];
-    
-    [self addSpaceDog];
     
     self.physicsWorld.gravity = CGVectorMake(0, -9.8);
     self.physicsWorld.contactDelegate = self;
@@ -63,13 +70,15 @@
 }
 
 -(void)addSpaceDog{
-  STSpaceDogNode *spaceDogA = [STSpaceDogNode spaceDogOfType:STSpaceDogTypeA];
-  spaceDogA.position = CGPointMake(300, 300);
-  [self addChild:spaceDogA];
+  NSUInteger randomSpaceDog = [STUtility randWithMin:0 max:2];
+  STSpaceDogNode *spaceDog = [STSpaceDogNode spaceDogOfType:randomSpaceDog];
+  float dy = [STUtility randWithMin:STSpaceDogMinSpeed max:STSpaceDogMaxSpeed];
+  spaceDog.physicsBody.velocity = CGVectorMake(0, dy);
   
-  STSpaceDogNode *spaceDogB = [STSpaceDogNode spaceDogOfType:STSpaceDogTypeB];
-  spaceDogB.position = CGPointMake(200, 200);
-  [self addChild:spaceDogB];
+  float y = self.frame.size.height + spaceDog.size.height;
+  float x = [STUtility randWithMin:10 + spaceDog.size.width max:self.frame.size.width-10-spaceDog.size.width];
+  spaceDog.position = CGPointMake(x, y);
+  [self addChild:spaceDog];
 }
 
 - (void) didBeginContact:(SKPhysicsContact *)contact{
@@ -117,6 +126,19 @@
     }];
     
   }
+}
+
+- (void)update:(NSTimeInterval)currentTime{
+  if (self.lastUpdateTimeInterval){
+    self.timeSinceEnemyAdded += currentTime - self.lastUpdateTimeInterval;
+  }
+  if (self.timeSinceEnemyAdded > 1.5){
+    [self addSpaceDog];
+    self.timeSinceEnemyAdded = 0;
+  }
+  
+  self.lastUpdateTimeInterval = currentTime;
+
 }
 
 

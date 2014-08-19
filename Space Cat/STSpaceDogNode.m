@@ -27,6 +27,11 @@
                  [SKTexture textureWithImageNamed:@"spacedog_B_4"]];
   }
   
+  // modulate the scale of the dogs
+  float scale = [STUtility randWithMin:85 max:100] / 100.0f;
+  spaceDog.xScale = scale;
+  spaceDog.yScale = scale;
+  
   SKAction *animation = [SKAction animateWithTextures:textures timePerFrame:0.1];
   [spaceDog runAction:[SKAction repeatActionForever:animation]];
   
