@@ -12,6 +12,7 @@ static const int STProjectileSpeed = 400;
 static const int STSpaceDogMinSpeed = -100;
 static const int STSpaceDogMaxSpeed = -50;
 static const int STMaxLives = 3;
+static const int STPointsPerHit = 100;
 
 typedef NS_OPTIONS(uint32_t, STCollisionCategory){
   STCollisionCategoryEnemy = 1 << 0,

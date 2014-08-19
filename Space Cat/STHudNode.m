@@ -14,6 +14,7 @@
   STHudNode *hud = [self node];
   hud.position = position;
   hud.zPosition = 10;
+  hud.name = @"HUD";
   
   SKSpriteNode *catHead = [SKSpriteNode spriteNodeWithImageNamed:@"HUD_cat_1"];
   catHead.position = CGPointMake(30, -10);
@@ -46,4 +47,21 @@
   
   return hud;
 }
+
+- (void) addPoints:(NSInteger)points{
+  self.score += points;
+  SKLabelNode *scoreLabel = (SKLabelNode *)[self childNodeWithName:@"Score"];
+  scoreLabel.text = [NSString stringWithFormat:@"%d", self.score];
+}
+
+- (BOOL) loseLife{
+  if (self.lives > 0){
+    NSString *lifeNodeName = [NSString stringWithFormat:@"Life%d", self.lives];
+    SKNode  *lifeToRemove = [self childNodeWithName:lifeNodeName];
+    [lifeToRemove removeFromParent];
+    self.lives--;
+  }
+  return self.lives == 0;
+}
+
 @end

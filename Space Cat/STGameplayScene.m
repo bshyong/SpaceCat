@@ -132,10 +132,13 @@
   if (first.categoryBitMask == STCollisionCategoryEnemy && second.categoryBitMask == STCollisionCategoryProjectile){
     STProjectileNode *projectile = (STProjectileNode *)second.node;
     [self runAction:self.explodeSFX];
+    [self addPoints:STPointsPerHit];
+    
     [spaceDog removeFromParent];
     [projectile removeFromParent];
   } else if (first.categoryBitMask == STCollisionCategoryEnemy && second.categoryBitMask == STCollisionCategoryGround){
     [self runAction:self.damageSFX];
+    [self loseLife];
     [spaceDog removeFromParent];
   }
 }
@@ -170,6 +173,16 @@
   [explosion runAction:[SKAction waitForDuration:2.0] completion:^{
     [explosion removeFromParent];
   }];
+}
+
+- (void)addPoints:(NSInteger)points{
+  STHudNode *hud = (STHudNode *)[self childNodeWithName:@"HUD"];
+  [hud addPoints:points];
+}
+
+- (void)loseLife{
+  STHudNode *hud = (STHudNode *)[self childNodeWithName:@"HUD"];
+  [hud loseLife];
 }
 
 - (void)update:(NSTimeInterval)currentTime{
